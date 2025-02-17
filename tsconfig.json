@@ -1,0 +1,9 @@
+{
+	"extends": "@miorso/tsconfig/library",
+	"compilerOptions": {
+		"outDir": "dist",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
+}
