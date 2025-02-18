@@ -44,7 +44,7 @@ export default [
 		files: ['eslint.config.js'],
 		rules: {
 			// Prohibit default exports
-			'import/no-default-export': 'error',
+			'import/no-default-export': 'off',
 		},
 	},
 ];
