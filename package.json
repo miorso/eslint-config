@@ -17,12 +17,17 @@
 	"license": "MIT",
 	"author": "Mikel Orbea",
 	"type": "module",
-	"exports": "./src/index.js",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": "./dist/index.js",
+		"./package.json": "./package.json"
+	},
 	"scripts": {
 		"prepare": "husky",
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write .",
-		"build": "tsup src/index.ts --format cjs,esm --dts"
+		"build": "tsup src/index.ts --format esm --dts"
 	},
 	"lint-staged": {
 		"**/*": [
