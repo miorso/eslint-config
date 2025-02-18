@@ -37,7 +37,7 @@ const DEFAULT_OPTIONS = {
 	playwright: false,
 } as const satisfies ESLintConfigOptions;
 
-export function createConfig(options: Partial<ESLintConfigOptions>): Linter.Config[] {
+export function getConfig(options: Partial<ESLintConfigOptions>): Linter.Config[] {
 	const mergedOptions: ESLintConfigOptions = { ...DEFAULT_OPTIONS, ...options };
 
 	const configs = Object.entries(configFiles)
