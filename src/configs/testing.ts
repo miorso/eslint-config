@@ -1,34 +1,28 @@
 import vitestPlugin from '@vitest/eslint-plugin';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import playwrightPlugin from 'eslint-plugin-playwright';
+import { Linter } from 'eslint';
 
-/**
- * @typedef {Object} ESLintConfigTestingOptions
- * @property {boolean} [vitest=false] - Include vitest config.
- * @property {boolean} [react=false] - Include testing library config.
- * @property {boolean} [playwright=false] - Include playwright config.
- */
+type ESLintConfigTestingOptions = {
+	vitest: boolean;
+	react: boolean;
+	playwright: boolean;
+};
 
-/** @type {ESLintConfigTestingOptions} */
 const DEFAULT_OPTIONS = {
 	vitest: true,
 	react: false,
 	playwright: false,
-};
+} as const satisfies ESLintConfigTestingOptions;
 
-/**
- * Generates an ESLint config based on testing rules.
- * @param {Partial<ESLintConfigTestingOptions>} options - An object with booleans indicating which configs to include.
- * @returns {import('eslint').Linter.Config[]} The combined ESLint configuration.
- */
-export function getConfig(options = {}) {
+export function getConfig(options: Partial<ESLintConfigTestingOptions>): Linter.Config[] {
 	const mergedOptions = {
 		vitest: options.vitest ?? DEFAULT_OPTIONS.vitest,
 		react: options.react ?? DEFAULT_OPTIONS.react,
 		playwright: options.playwright ?? DEFAULT_OPTIONS.playwright,
 	};
 
-	const configs = [];
+	const configs: Linter.Config[] = [];
 
 	if (mergedOptions.vitest) {
 		configs.push({

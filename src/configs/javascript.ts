@@ -1,6 +1,6 @@
 import pluginJs from '@eslint/js';
+import { Linter } from 'eslint';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
 	{
 		name: 'eslint/js/recommended',
@@ -23,4 +23,4 @@ export default [
 			],
 		},
 	},
-];
+] satisfies Linter.Config[];
