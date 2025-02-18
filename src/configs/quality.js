@@ -39,4 +39,12 @@ export default [
 			'import/no-named-as-default-member': 'error',
 		},
 	},
+	{
+		name: 'import/custom-rules/off',
+		files: ['eslint.config.js'],
+		rules: {
+			// Prohibit default exports
+			'import/no-default-export': 'error',
+		},
+	},
 ];
