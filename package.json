@@ -17,17 +17,17 @@
 	"license": "MIT",
 	"author": "Mikel Orbea",
 	"type": "module",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
 	"exports": {
 		".": "./dist/index.js",
 		"./package.json": "./package.json"
 	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
+		"build": "tsup src/index.ts --format esm --dts",
 		"prepare": "husky",
 		"prettier": "prettier --check .",
-		"prettier:fix": "prettier --write .",
-		"build": "tsup src/index.ts --format esm --dts"
+		"prettier:fix": "prettier --write ."
 	},
 	"lint-staged": {
 		"**/*": [
@@ -44,7 +44,7 @@
 		"@vitest/eslint-plugin": "^1.1.31",
 		"eslint": "^9.20.1",
 		"eslint-config-prettier": "^10.0.1",
-		"eslint-import-resolver-typescript": "^3.8.1",
+		"eslint-import-resolver-typescript": "^3.8.2",
 		"eslint-plugin-import": "^2.31.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-playwright": "^2.2.0",
