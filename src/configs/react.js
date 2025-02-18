@@ -3,8 +3,8 @@ import globals from 'globals';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginQuery from '@tanstack/eslint-plugin-query';
-import { Linter } from 'eslint';
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
 	{
 		name: 'eslint-plugin-react/recommended',
@@ -44,4 +44,4 @@ export default [
 		rules: { ...pluginReactHooks.configs.recommended.rules },
 	},
 	...pluginQuery.configs['flat/recommended'],
-] satisfies Linter.Config[];
+];

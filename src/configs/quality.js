@@ -3,8 +3,8 @@ import commentsPlugin from '@eslint-community/eslint-plugin-eslint-comments/conf
 import pluginPromise from 'eslint-plugin-promise';
 import importPlugin from 'eslint-plugin-import';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
-import { Linter } from 'eslint';
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
 	sonarjsPlugin.configs.recommended,
 	commentsPlugin.recommended,
@@ -39,4 +39,4 @@ export default [
 			'import/no-named-as-default-member': 'error',
 		},
 	},
-] satisfies Linter.Config[];
+];

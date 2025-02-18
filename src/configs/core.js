@@ -1,6 +1,6 @@
 import globals from 'globals';
-import { Linter } from 'eslint';
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
 	{
 		name: 'eslint/core',
@@ -8,4 +8,4 @@ export default [
 		linterOptions: { reportUnusedDisableDirectives: 'error' },
 		languageOptions: { globals: { ...globals.browser, ...globals.node } },
 	},
-] satisfies Linter.Config[];
+];

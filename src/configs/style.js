@@ -1,16 +1,22 @@
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import stylistic from '@stylistic/eslint-plugin';
-import { Linter } from 'eslint';
 
-type ESLintConfigStyleOptions = {
-	react: boolean;
-};
+/**
+ * @typedef {Object} ESLintConfigStyleOptions
+ * @property {boolean} [react=false] - Include JSX config for @stylistic.
+ */
 
+/** @type {ESLintConfigStyleOptions} */
 const DEFAULT_OPTIONS = {
 	react: false,
-} as const satisfies ESLintConfigStyleOptions;
+};
 
-export function getConfig(options: ESLintConfigStyleOptions): Linter.Config[] {
+/**
+ * Returns an ESLint config based on style rules.
+ * @param {ESLintConfigStyleOptions} options - An object with booleans indicating which configs to include.
+ * @returns {import('eslint').Linter.Config[]} The combined ESLint configuration.
+ */
+export function getConfig(options = {}) {
 	const mergedOptions = {
 		react: options.react ?? DEFAULT_OPTIONS.react,
 	};

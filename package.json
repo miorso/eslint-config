@@ -1,6 +1,6 @@
 {
 	"name": "@miorso/eslint-config",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Shared ESLint configuration for consistent code style across projects",
 	"keywords": [
 		"eslint",
@@ -17,14 +17,9 @@
 	"license": "MIT",
 	"author": "Mikel Orbea",
 	"type": "module",
-	"exports": {
-		".": "./dist/index.js",
-		"./package.json": "./package.json"
-	},
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"exports": "./src/index.js",
+	"main": "src/index.js",
 	"scripts": {
-		"build": "tsup src/index.ts --format esm --dts",
 		"prepare": "husky",
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write ."
@@ -38,7 +33,6 @@
 		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
 		"@eslint/js": "^9.20.0",
 		"@miorso/prettier-config": "^1.0.3",
-		"@miorso/tsconfig": "^1.0.7",
 		"@stylistic/eslint-plugin": "^4.0.0",
 		"@tanstack/eslint-plugin-query": "^5.66.1",
 		"@vitest/eslint-plugin": "^1.1.31",
@@ -59,8 +53,6 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^15.4.3",
 		"prettier": "^3.5.1",
-		"tsup": "^8.3.6",
-		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.24.1"
 	},
 	"peerDependencies": {
