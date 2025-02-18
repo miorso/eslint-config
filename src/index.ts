@@ -37,12 +37,7 @@ const DEFAULT_OPTIONS = {
 	playwright: false,
 } as const satisfies ESLintConfigOptions;
 
-/**
- * Generates an ESLint config based on enabled modules.
- * @param {Partial<ESLintConfigOptions>} options - An object with booleans indicating which configs to include.
- * @returns {import('eslint').Linter.FlatConfig[]} The combined ESLint configuration.
- */
-export function createConfig(options: Partial<ESLintConfigOptions>): Linter.FlatConfig[] {
+export function createConfig(options: Partial<ESLintConfigOptions>): Linter.Config[] {
 	const mergedOptions: ESLintConfigOptions = { ...DEFAULT_OPTIONS, ...options };
 
 	const configs = Object.entries(configFiles)
